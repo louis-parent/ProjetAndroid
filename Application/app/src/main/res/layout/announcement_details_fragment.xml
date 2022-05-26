@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/announcement_details_image"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:minWidth="128dp"
+        android:minHeight="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_placeholder"
+        android:contentDescription="@string/announcement_image" />
+
+    <TextView
+        android:id="@+id/announcement_details_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/model"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_details_image" />
+
+    <TextView
+        android:id="@+id/announcement_details_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/_0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_details_title" />
+
+    <TextView
+        android:id="@+id/announcement_details_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/to_sell"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@+id/announcement_details_type_icon"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_details_type_icon"
+        app:layout_constraintTop_toTopOf="@+id/announcement_details_type_icon" />
+
+    <ImageView
+        android:id="@+id/announcement_details_type_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_details_title"
+        app:srcCompat="@drawable/ic_baseline_sell_24"
+        app:tint="@color/primary"
+        android:contentDescription="@string/announcement_type_icon" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_details_price">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/announcement_details_doors_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/doors_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_doors_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_doors_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_doors_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_year_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_year_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_year_label" />
+
+            <ImageView
+                android:id="@+id/announcement_details_exterior_color_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/color_icon"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_energy_icon"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_energy_icon"
+                app:srcCompat="@drawable/ic_baseline_color_lens_24"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/announcement_details_doors_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/doors_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_places"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_interior_color_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_places"
+                app:srcCompat="@drawable/ic_baseline_sensor_door_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_energy_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/energy_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_energy_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_energy_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_energy_icon" />
+
+            <ImageView
+                android:id="@+id/announcement_details_co2_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/co2_icon"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_power_icon"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_power_icon"
+                app:srcCompat="@drawable/ic_baseline_co2_24"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/announcement_details_energy_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/energy_icon"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_technical_control_icon"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_technical_control_icon"
+                app:srcCompat="@drawable/ic_baseline_local_gas_station_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_interior_color_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/interior_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_interior_color_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_interior_color_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_interior_color_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_energy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/gasoline"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_energy_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_energy_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_energy_label" />
+
+            <ImageView
+                android:id="@+id/announcement_details_places_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/places_icon"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_exterior_color_icon"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_exterior_color_icon"
+                app:srcCompat="@drawable/ic_baseline_person_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_consumption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_consumption_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_consumption_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_consumption_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_exterior_color_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/exterior_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_exterior_color_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_exterior_color_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_exterior_color_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_din_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/power_din_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_din_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_din_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_din_icon" />
+
+            <ImageView
+                android:id="@+id/announcement_details_consumption_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/consumption_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_co2"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_din_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_co2"
+                app:srcCompat="@drawable/ic_baseline_energy_savings_leaf_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_kilometers_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/kilometers_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_kilometers_icon"
+                app:layout_constraintEnd_toStartOf="@+id/announcement_details_kilometers"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_kilometers_icon"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <TextView
+                android:id="@+id/announcement_details_technical_control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/has_technical_control"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_technical_control_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_technical_control_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_technical_control_icon" />
+
+            <ImageView
+                android:id="@+id/announcement_details_din_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/power_din_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_power"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_doors_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_power"
+                app:srcCompat="@drawable/ic_baseline_flash_on_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_kilometers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_kilometers_label"
+                app:layout_constraintEnd_toStartOf="@+id/announcement_details_kilometers_unit"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_kilometers_label"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/announcement_details_co2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_co2_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_co2_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_co2_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_gearbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/automatic"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_gearbox_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_gearbox_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_gearbox_label" />
+
+            <ImageView
+                android:id="@+id/announcement_details_kilometers_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/kilometers_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_year_icon"
+                app:layout_constraintEnd_toStartOf="@+id/announcement_details_kilometers_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_year_icon"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/ic_baseline_speed_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_interior_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_interior_color_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_interior_color_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_interior_color_label"
+                tools:text="None" />
+
+            <TextView
+                android:id="@+id/announcement_details_places"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_places_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_places_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_places_label" />
+
+            <ImageView
+                android:id="@+id/announcement_details_technical_control_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/technical_control_icon"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_year_icon"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_year_icon"
+                app:srcCompat="@drawable/ic_baseline_check_24"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/announcement_details_gearbox_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/gearbox_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_energy"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_kilometers_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_energy"
+                app:srcCompat="@drawable/ic_baseline_speed_lever_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_power_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/power_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_power_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_power_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_power_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_din"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_din_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_din_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_din_label" />
+
+            <TextView
+                android:id="@+id/announcement_details_power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_power_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_power_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_power_label" />
+
+            <TextView
+                android:id="@+id/announcement_details_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/general_informations"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/announcement_details_doors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_doors_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_doors_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_doors_label" />
+
+            <ImageView
+                android:id="@+id/announcement_details_power_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/power_icon"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_places_icon"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_places_icon"
+                app:srcCompat="@drawable/ic_baseline_electric_car_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_gearbox_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/gearbox_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_gearbox_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_gearbox_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_gearbox_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_exterior_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_exterior_color_label"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_exterior_color_label"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_exterior_color_label"
+                tools:text="None" />
+
+            <TextView
+                android:id="@+id/announcement_details_places_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/places_semicolon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_places_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_places_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_places_icon" />
+
+            <ImageView
+                android:id="@+id/announcement_details_year_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/year_icon"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_subtitle"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_subtitle_underline"
+                app:srcCompat="@drawable/ic_baseline_date_range_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_year_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/year_semicolon"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_year_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_year_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_year_icon" />
+
+            <View
+                android:id="@+id/announcement_details_subtitle_underline"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/primary"
+                app:layout_constraintEnd_toEndOf="@+id/announcement_details_subtitle"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_subtitle"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_subtitle" />
+
+            <ImageView
+                android:id="@+id/announcement_details_interior_color_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/color_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_exterior_color"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_gearbox_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_exterior_color"
+                app:srcCompat="@drawable/ic_baseline_color_lens_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_kilometers_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/km"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_kilometers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_kilometers" />
+
+            <TextView
+                android:id="@+id/announcement_details_power_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/ch"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_power"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_power"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_power" />
+
+            <TextView
+                android:id="@+id/textView5_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/ch"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_din"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_din"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_din"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/announcement_details_co2_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/mg"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_co2"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_co2"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_co2" />
+
+            <TextView
+                android:id="@+id/announcement_details_consumption_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/consumption_unit"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_consumption"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_consumption"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_consumption" />
+
+            <TextView
+                android:id="@+id/announcement_details_announcer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/announcer_information"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_co2_icon"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_co2_icon" />
+
+            <View
+                android:id="@+id/announcement_details_announcer_underline"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:background="@color/primary"
+                app:layout_constraintEnd_toEndOf="@+id/announcement_details_announcer_title"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_announcer_title"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_announcer_title" />
+
+            <ImageView
+                android:id="@+id/announcement_details_location_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_announcer"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_consumption_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_announcer"
+                app:srcCompat="@drawable/ic_baseline_place_24"
+                app:tint="@color/primary"
+                android:contentDescription="@string/location_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_location_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_location_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_location_icon" />
+
+            <ImageView
+                android:id="@+id/announcement_details_phone_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/phone_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_announcer_icon"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_announcer_icon"
+                app:srcCompat="@drawable/ic_baseline_phone_24"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_phone_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_phone_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_phone_icon" />
+
+            <TextView
+                android:id="@+id/announcement_details_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_email_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_email_icon" />
+
+            <ImageView
+                android:id="@+id/announcement_details_email_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_phone"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_location_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_phone"
+                app:srcCompat="@drawable/ic_baseline_email_24"
+                app:tint="@color/primary"
+                android:contentDescription="@string/email_icon" />
+
+            <ImageView
+                android:id="@+id/announcement_details_announcer_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/announcement_details_announcer_underline"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_details_announcer_underline"
+                app:srcCompat="@drawable/ic_baseline_person_24"
+                android:contentDescription="@string/person_icon"
+                app:tint="@color/primary" />
+
+            <TextView
+                android:id="@+id/announcement_details_announcer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/announcement_details_announcer_icon"
+                app:layout_constraintStart_toEndOf="@+id/announcement_details_announcer_icon"
+                app:layout_constraintTop_toTopOf="@+id/announcement_details_announcer_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/announcement_details_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:contentDescription="@string/announcement_message_access"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_message_24" />
+
+    <TextView
+        android:id="@+id/announcement_details_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:foregroundTint="@color/error"
+        android:text="@string/delete"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/error"
+        app:drawableTint="@color/error"
+        app:layout_constraintEnd_toEndOf="@+id/announcement_details_enhance"
+        app:layout_constraintStart_toStartOf="@+id/announcement_details_enhance"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_details_enhance"
+        app:drawableEndCompat="@drawable/ic_baseline_delete_forever_24" />
+
+    <TextView
+        android:id="@+id/announcement_details_enhance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:foregroundTint="@color/secondary"
+        android:text="@string/enhance"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/secondary"
+        app:drawableTint="@color/secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/announcement_details_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:drawableEndCompat="@drawable/ic_baseline_workspace_premium_24" />
+
+    <TextView
+        android:id="@+id/announcement_details_price_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/euro"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@+id/announcement_details_price"
+        app:layout_constraintStart_toEndOf="@+id/announcement_details_price"
+        app:layout_constraintTop_toTopOf="@+id/announcement_details_price" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/announcement_details_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:contentDescription="@string/announcement_edit"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

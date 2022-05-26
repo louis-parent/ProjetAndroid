@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp">
+
+            <TextView
+                android:id="@+id/statistics_announcement_by_type_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/amount_of_announcement_by_type"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <View
+                android:id="@+id/statistics_announcement_by_type_underline"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/primary" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/statistics_announcement_by_type"
+                android:layout_width="match_parent"
+                android:layout_height="384dp"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/statistics_message_by_month_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/amount_of_message_by_month"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <View
+                android:id="@+id/statistics_message_by_month_underline"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/primary" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/statistics_message_by_month"
+                android:layout_width="match_parent"
+                android:layout_height="384dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

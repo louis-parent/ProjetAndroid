@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/payment_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/payment_validate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        app:backgroundTint="@color/secondary"
+        app:layout_constraintEnd_toEndOf="@+id/payment_container"
+        app:layout_constraintTop_toTopOf="@+id/payment_container"
+        app:srcCompat="@drawable/ic_baseline_check_24"
+        android:contentDescription="@string/validate_payment"
+        android:focusable="true" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/payment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/payment_card_number_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/card_number"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payment_title" />
+
+        <TextView
+            android:id="@+id/payment_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_header_background"
+            android:padding="8dp"
+            android:text="@string/payment_details"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/payment_card_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:ems="16"
+            android:hint="@string/credit_card_null_number"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/payment_card_number_label"
+            app:layout_constraintTop_toBottomOf="@+id/payment_card_number_label"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/payment_card_expiration_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/expiration_date"
+            app:layout_constraintStart_toStartOf="@+id/payment_card_number_label"
+            app:layout_constraintTop_toBottomOf="@+id/payment_card_number" />
+
+        <Spinner
+            android:id="@+id/payment_card_expiration_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/payment_card_cvv"
+            app:layout_constraintStart_toStartOf="@+id/payment_card_expiration_label"
+            app:layout_constraintTop_toTopOf="@+id/payment_card_cvv" />
+
+        <Spinner
+            android:id="@+id/payment_card_expiration_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/payment_card_expiration_month"
+            app:layout_constraintStart_toEndOf="@+id/payment_card_expiration_month"
+            app:layout_constraintTop_toTopOf="@+id/payment_card_expiration_month" />
+
+        <EditText
+            android:id="@+id/payment_card_cvv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="3"
+            android:hint="@string/credit_card_null_cvv"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/payment_card_number"
+            app:layout_constraintTop_toBottomOf="@+id/payment_card_cvv_label"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/payment_card_cvv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/cvv"
+            app:layout_constraintBottom_toBottomOf="@+id/payment_card_expiration_label"
+            app:layout_constraintStart_toStartOf="@+id/payment_card_cvv"
+            app:layout_constraintTop_toTopOf="@+id/payment_card_expiration_label" />
+
+        <TextView
+            android:id="@+id/payment_card_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cardholder_s_name"
+            app:layout_constraintStart_toStartOf="@+id/payment_card_expiration_label"
+            app:layout_constraintTop_toBottomOf="@+id/payment_card_cvv" />
+
+        <EditText
+            android:id="@+id/payment_card_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="@string/name_hint"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/payment_card_number"
+            app:layout_constraintStart_toStartOf="@+id/payment_card_name_label"
+            app:layout_constraintTop_toBottomOf="@+id/payment_card_name_label"
+            android:autofillHints="name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/payment_amount_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/montant_semicolon"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/payment_container"
+        app:layout_constraintStart_toStartOf="@+id/payment_container" />
+
+    <TextView
+        android:id="@+id/payment_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/_0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/payment_amount_label"
+        app:layout_constraintStart_toEndOf="@+id/payment_amount_label"
+        app:layout_constraintTop_toTopOf="@+id/payment_amount_label" />
+
+    <TextView
+        android:id="@+id/payment_amount_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/euro"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/payment_amount"
+        app:layout_constraintStart_toEndOf="@+id/payment_amount"
+        app:layout_constraintTop_toTopOf="@+id/payment_amount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/announcementListFragment">
+
+    <fragment
+        android:id="@+id/announcementListFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.announcement.list.AnnouncementListFragment">
+        <action
+            android:id="@+id/from_announcement_list_to_filters"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/from_announcement_list_to_announcement_list"
+            app:destination="@id/announcementListFragment" />
+        <action
+            android:id="@+id/from_announcement_list_to_announcement_details"
+            app:destination="@id/announcementDetailsFragment" />
+        <action
+            android:id="@+id/from_announcement_list_to_announcement_editor"
+            app:destination="@id/announcementEditor" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.filter.SearchFilterFragment"
+        android:label="Filters">
+        <action
+            android:id="@+id/from_filters_to_announcement_list"
+            app:destination="@id/announcementListFragment" />
+    </fragment>
+    <action android:id="@+id/to_announcement_list" app:destination="@id/announcementListFragment" />
+    <fragment
+        android:id="@+id/announcementDetailsFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.announcement.details.AnnouncementDetailsFragment"
+        android:label="AnnouncementDetailsFragment">
+        <action
+            android:id="@+id/from_announcement_details_to_announcement_list"
+            app:destination="@id/announcementListFragment" />
+        <action
+            android:id="@+id/from_announcement_details_to_announcement_editor"
+            app:destination="@id/announcementEditor" />
+        <action
+            android:id="@+id/from_announcement_details_to_profile"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/from_announcement_details_to_chat"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/from_announcement_detail_to_payment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/announcementEditor"
+        android:name="fr.umontpellier.carhiboux.fragment.announcement.editor.AnnouncementEditorFragment"
+        android:label="AnnouncementEditorFragment" >
+        <action
+            android:id="@+id/from_announcement_editor_to_announcement_list"
+            app:destination="@id/announcementListFragment" />
+        <action
+            android:id="@+id/from_announcement_editor_to_announcement_details"
+            app:destination="@id/announcementDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/from_profile_to_payment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <action
+        android:id="@+id/to_profile"
+        app:destination="@id/profileFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/from_login_to_register"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <action
+        android:id="@+id/to_login"
+        app:destination="@id/loginFragment" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.register.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/from_register_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationListFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.notification.list.NotificationListFragment"
+        android:label="NotificationListFragment" >
+        <action
+            android:id="@+id/from_notification_list_to_announcement_details"
+            app:destination="@id/announcementDetailsFragment" />
+        <action
+            android:id="@+id/from_notification_list_to_chat"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <action
+        android:id="@+id/to_notification_list"
+        app:destination="@id/notificationListFragment" />
+    <fragment
+        android:id="@+id/alertListFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.alert.list.AlertListFragment"
+        android:label="AlertListFragment" >
+        <action
+            android:id="@+id/from_alert_list_to_alert_editor"
+            app:destination="@id/alertEditorFragment" />
+    </fragment>
+    <action
+        android:id="@+id/to_alert_list"
+        app:destination="@id/alertListFragment" />
+    <fragment
+        android:id="@+id/alertEditorFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.alert.editor.AlertEditorFragment"
+        android:label="AlertEditorFragment" >
+        <action
+            android:id="@+id/from_alert_editor_to_alert_list"
+            app:destination="@id/alertListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.chat.thread.ChatFragment"
+        android:label="ChatFragment" />
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.chat.list.ChatListFragment"
+        android:label="ChatListFragment" >
+        <action
+            android:id="@+id/from_chat_list_to_chat"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <action
+        android:id="@+id/to_chat_list"
+        app:destination="@id/chatListFragment" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.payment.PaymentFragment"
+        android:label="PaymentFragment" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="fr.umontpellier.carhiboux.fragment.statistics.StatisticsFragment"
+        android:label="StatisticsFragment" />
+    <action
+        android:id="@+id/to_statistics"
+        app:destination="@id/statisticsFragment" />
+</navigation>

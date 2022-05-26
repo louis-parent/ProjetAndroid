@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/register_nickname_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/register_nickname"
+        android:text="@string/nickname"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/register_nickname"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/register_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_nickname_title"
+        android:autofillHints="username" />
+
+    <TextView
+        android:id="@+id/register_civility_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/register_civility"
+        android:text="@string/civility"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/register_nickname_title"
+        app:layout_constraintTop_toBottomOf="@+id/register_nickname" />
+
+    <TextView
+        android:id="@+id/register_firstname_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/register_firstname"
+        android:text="@string/first_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/register_civility_title"
+        app:layout_constraintTop_toBottomOf="@+id/register_civility" />
+
+    <TextView
+        android:id="@+id/register_lastname_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/register_lastname"
+        android:text="@string/last_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/register_firstname_title"
+        app:layout_constraintTop_toBottomOf="@+id/register_firstname" />
+
+    <TextView
+        android:id="@+id/register_birthdate_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/register_birthdate"
+        android:text="@string/birthdate"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/register_lastname_title"
+        app:layout_constraintTop_toBottomOf="@+id/register_lastname" />
+
+    <EditText
+        android:id="@+id/register_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="name"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/register_civility"
+        app:layout_constraintStart_toStartOf="@+id/register_civility"
+        app:layout_constraintTop_toBottomOf="@+id/register_firstname_title" />
+
+    <EditText
+        android:id="@+id/register_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/register_firstname"
+        app:layout_constraintStart_toStartOf="@+id/register_firstname"
+        app:layout_constraintTop_toBottomOf="@+id/register_lastname_title"
+        android:autofillHints="name" />
+
+    <EditText
+        android:id="@+id/register_birthdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="@+id/register_lastname"
+        app:layout_constraintStart_toStartOf="@+id/register_lastname"
+        app:layout_constraintTop_toBottomOf="@+id/register_birthdate_title"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/register_civility"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/register_nickname"
+        app:layout_constraintStart_toStartOf="@+id/register_nickname"
+        app:layout_constraintTop_toBottomOf="@+id/register_civility_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
